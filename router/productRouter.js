@@ -19,7 +19,7 @@ const { verifyuser, authrizeRoles } = require("../middleware/verifyuser");
 //   .get(getProductById);
 
 // For All
-router.route("/").get(getProducts);
+router.route("/products").get(getProducts);
 
 // User
 router.route("/review").put(verifyuser, createProductReview);

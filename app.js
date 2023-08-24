@@ -35,10 +35,10 @@ app.use(
 );
 
 //API
-app.use("/", authentication);
-app.use("/api/category", categoryRouter);
-///api/v2/product
-app.use("/api/product", productRouter);
+app.use("/api/v1/", authentication);
+app.use("/api/v1/", categoryRouter);
+//
+app.use("/api/v1/", productRouter);
 app.use("/api/v1/", orderRouter);
 
 // if any middelware use for error handeling then err must be pass first
