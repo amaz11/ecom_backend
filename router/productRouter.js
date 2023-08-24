@@ -36,5 +36,5 @@ router
   .route("admin/product/:id")
   .post(verifyuser, authrizeRoles("admin"), updateProductById)
   .delete(verifyuser, authrizeRoles("admin"), deleteProductById);
-router.route("/:id").get(getProductById);
+router.route("/product/:id").get(getProductById);
 module.exports = router;
