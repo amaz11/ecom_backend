@@ -10,12 +10,12 @@ const {
 const { verifyuser, authrizeRoles } = require("../middleware/verifyuser");
 
 // User
-router.route("/order/new").post(verifyuser, newOrder);
-router.route("/order/:id").get(verifyuser, getAnOrder);
-router.route("/order").get(verifyuser, getUserOrder);
+router.route("new").post(verifyuser, newOrder);
+router.route(":id").get(verifyuser, getAnOrder);
+router.route("order").get(verifyuser, getUserOrder);
 
 // admin
 router.use(verifyuser, authrizeRoles("admin"));
-router.route("/admin/orders").get(getAllOrder);
-router.route("/admin/order/:id").put(updateOrderStatus).delete(deleteOrder);
+router.route("admin/orders").get(getAllOrder);
+router.route("admin/order/:id").put(updateOrderStatus).delete(deleteOrder);
 module.exports = router;
